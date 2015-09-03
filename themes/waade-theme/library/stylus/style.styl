@@ -1,0 +1,73 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Main Stylesheet
+
+Here's where the magic happens. Here, you'll see we are calling in
+the separate media queries. The base mobile goes outside any query
+and is called at the beginning, after that we call the rest
+of the styles inside media queries.
+
+Helpful articles on Sass file organization:
+http://thesassway.com/advanced/modular-css-naming-conventions
+
+******************************************************************/
+
+/*********************
+IMPORTING PARTIALS
+These files are needed at the beginning so that we establish all
+our mixins, functions, and variables that we'll be using across
+the whole project.
+*********************/
+// Stylus variables (colors and fonts etc...)
+
+
+
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic)
+// normalize: http://necolas.github.io/normalize.css/
+@import "partials/_normalize.styl"
+
+// Stylus Functions
+@import "partials/_functions.styl"
+
+
+//Variables
+@import "partials/_variables.styl"
+
+@import 'nib'
+
+@import "partials/rupture.styl"
+
+// the grid
+@import "partials/_grid.styl"
+
+// Stylus Fixes
+@import "partials/_fixes.styl"
+
+/*********************
+IMPORTING MODULES
+Modules are reusable blocks or elements we use throughout the project.
+We can break them up as much as we want or just keep them all in one.
+*********************/
+//icons
+@import "modules/_icons.styl"
+
+// buttons
+@import "modules/_buttons.styl"
+
+// forms (inputs & labels)
+@import "modules/_forms.styl"
+
+@import "modules/_carousel.styl"
+
+@import "base.styl"
+
+
+/*PRINT STYLESHEET
+Feel free to customize this. Remember to add things that won't make
+sense to print at the bottom. Things like nav, ads, and forms should
+be set to display none.
+*/
+@media print 
+	@import "partials/_print.styl"

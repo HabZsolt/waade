@@ -1,0 +1,72 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: IE Stylesheet
+
+So instead of using the respond.js file to add media query support
+to IE, we're going to use SASS to create an easily readable css file.
+Here, we import all the styles the standard stylesheet gets, only
+without the media queries. No need to worry about editing anything!
+
+******************************************************************/
+
+
+// normalize: http://necolas.github.io/normalize.css/
+@import "partials/_normalize.styl"
+
+// Stylus Functions
+@import "partials/_functions.styl"
+
+
+//Variables
+@import "partials/_variables.styl"
+
+// import stylus mixins
+//@import "partials/mixins.styl";
+@import 'nib'
+
+// the grid
+@import "partials/_grid.styl"
+
+// Stylus Fixes
+@import "partials/_fixes.styl"
+
+/*********************
+IMPORTING MODULES
+Modules are reusable blocks or elements we use throughout the project.
+We can break them up as much as we want or just keep them all in one.
+*********************/
+//icons
+@import "modules/_icons.styl"
+
+// buttons
+@import "modules/_buttons.styl"
+
+// forms (inputs & labels)
+@import "modules/_forms.styl"
+
+@import "modules/_carousel.styl"
+
+
+//BREAKPOINTS
+@import "breakpoints/base.styl"
+@import "breakpoints/_321up.styl"
+@import "breakpoints/_481up.styl"
+@import "breakpoints/_768up.styl"
+@import "breakpoints/_1030up.styl"
+@import "breakpoints/_1240up.styl"
+
+
+/******************************************************************
+ADDITIONAL IE FIXES
+These fixes are now ONLY seen by IE, so you don't have to worry
+about using prefixes, although it's best practice. For more info
+on using Modernizr classes, check out this link:
+http://www.modernizr.com/docs/
+******************************************************************/
+
+html,
+body,
+.center
+	min-width max-width !important

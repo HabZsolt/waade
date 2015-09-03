@@ -1,0 +1,1 @@
+jQuery(document).ready(function(r){r(".gform_wrapper .readonly input").attr("readonly","readonly")});

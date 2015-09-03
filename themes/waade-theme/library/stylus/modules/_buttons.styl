@@ -1,0 +1,71 @@
+/*********************
+BUTTON DEFAULTS
+*********************/
+
+.btn
+  display inline-block
+  position relative
+  font-family sans-serif-reg
+  text-decoration none
+  color bread
+  font-size 120%
+  font-size 100%
+  line-height 34px
+  font-weight normal
+  //border-radius 6px
+  border 0
+  cursor pointer
+  background-color lighten(light-grey,60%)
+  padding .45% 6%
+  margin .5em 1%
+  transition(all 0.14s ease-in-out)
+  &.blue,
+  &.gform_button
+    color rgb(255,255,255)
+    background-color blue
+    box-shadow(3px 3px 0px darken(blue,33%))
+    &:hover
+      color white
+  &.gform_button
+    font-size 1.4em!important
+    padding 1% 12%
+  &.active
+    background-color blue
+    box-shadow(2px 2px 0px dark-blue)
+    color white!important
+    text-shadow none
+  &:hover,
+  &:focus
+    text-decoration none
+  &:active
+    top 2px
+    left 1px
+    box-shadow(2px 2px 0px dark-blue)
+  span
+    text-align center
+    font-size 80%
+    text-shadow(1px 1px 0px rgba(black, 0.2))
+    box-shadow(1px 2px 3px rgba(black, 0.3))
+    border-radius 50%
+    background-color lighten(light-grey,60%)
+    width 20px
+    height 20px
+    line-height 1.5
+    margin 0
+    position absolute
+    top -3px
+    right -3px
+    display block
+    color grey
+
+
+
+.button,
+button,
+.gform_button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"]
+  @extend .btn
+
+

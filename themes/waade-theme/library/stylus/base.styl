@@ -1,0 +1,1494 @@
+/******************************************************************
+
+Stylesheet: Base Mobile Stylesheet
+
+Be light and don't over style since everything here will be
+loaded by mobile devices. You want to keep it as minimal as
+possible. This is called at the top of the main stylsheet
+and will be used across all viewports.
+
+******************************************************************/
+
+/*********************
+GENERAL STYLES
+*********************/
+html,
+body
+	height 100%
+	margin 0
+	padding 0
+	-webkit-font-smoothing antialiased
+body
+	font-family sans-serif-light
+	font-size 16px
+	color bread
+	line-height 1.5
+	background-color bg-color
+
+
+/********************
+BODY CLASSES
+********************/
+.csstransitions body
+	opacity 0
+	transition opacity .3s linear
+.csstransitions body.loaded
+	opacity 1
+
+
+/*********************
+LAYOUT & GRID STYLES
+*********************/
++above(768px)
+	.nav-toggle,
+	.top-menu,
+	.logo.top-menu
+		display none!important
+
+.wrap
+	width 96%
+	margin 0 auto
+
+//COLUMNS
+.col
+	img
+		max-width 100%
+		height auto
+		margin 0 auto
+		display block
+.col.center
+	text-align center
+.col.one,
+.col.two,
+.col.three,
+.col.four,
+.col.five,
+.col.six,
+.col.seven,
+.col.eight,
+.col.nine,
+.col.ten,
+.col.eleven,
+.col.twelve
+	column(12)
+	
++above(481px)
+	.col.one
+		column(1)
+	.col.two
+		column(2)
+	.col.three
+		column(3)
+	.col.four
+		column(4)
+	.col.five
+		column(5)
+	.col.six
+		column(6)
+	.col.seven
+		column(7)
+	.col.eight
+		column(8)
+	.col.nine
+		column(9)
+	.col.ten
+		column(10)
+	.col.eleven
+		column(11)
+	.col.twelve
+		column(12)
+
+/*********************
+LINK STYLES
+*********************/
+
+a, a:visited
+	color link-color
+
+	/* on hover */
+	&:hover, &:focus
+		color link-hover
+	
+
+	/* on click */
+	&:active
+
+
+	/* mobile tap color */
+	&:link 
+		/*
+		this highlights links on iPhones/iPads.
+		so it basically works like the :hover selector
+		for mobile devices.
+		*/
+		-webkit-tap-highlight-color rgba( 0, 0, 0, 0.3 )
+	
+
+
+/******************************************************************
+H1, H2, H3, H4, H5 STYLES
+******************************************************************/
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5
+	text-rendering optimizelegibility
+	font-weight 500
+	font-family sans-serif-reg
+	a
+		text-decoration none
+
+h1, .h1
+	font-size 2.5em
+	line-height 1.333em
+	text-transform uppercase
+
+h2, .h2
+	font-size 1.55em
+	line-height 1.4em
+	margin-bottom 0.375em
+	font-weight 700
+	font-style italic
+
+h3, .h3 
+	font-size 1.125em
+
+
+h4, .h4 
+	font-size 1.1em
+
+
+h5, .h5
+	font-size 0.846em
+	line-height 2.09em
+	letter-spacing 2px
+
+p
+	font-size 1.3em
+	margin 0 0 1em 0
+	font-family sans-serif-light
+	line-height 1.8
+
+/*********************
+TYPOGRAPHIC ELEMENTS
+*********************/
+
+.specialheadline
+	text-align center
+	width 100%
+	clear both
+	padding 2em 0 1em
+	position relative
+	display block
+	color bread
+	h2,h3
+		margin 0
+	h3
+		color grey
+	span
+		display block
+		height 2px
+		clear both
+		margin .4em auto .3em
+		background blue
+		min-width 160px
+		width 25%
+
+a.readmore
+	color red
+	text-decoration none
+	border-bottom 2px solid light-grey
+	font-family sans-serif-reg
+	font-size 1.4em
+	line-height 1.3
+
+.notification
+	position relative
+	font-family sans-serif-reg
+	font-size 110%
+	background lighten(blue,93%)
+	top 0
+	width 100%
+	text-align center
+	line-height 1.5
+	height 0
+	opacity 0
+	overflow hidden
+	transition all .2s ease-in-out
+	a
+		color white
+		font-size 80%
+		border 1px solid rgba(255,255,255,0.2)
+		padding 4px
+		text-decoration none
+		background lighten(red,85%)
+		background rgba(255,255,255,0.2)
+		line-height 1.5
+		display inline-block
+		max-width 80%
+	i
+		position absolute
+		right 12px
+		top 6px
+		height 12px
+		width 12px
+		cursor pointer
+		font-size 110%
+	&.sucess
+		background red
+		color white
+	&.out
+		height auto
+		padding .8em 0
+		opacity 1
+
+//Quote
+blockquote
+	font-size 110%
+	line-height 1.35
+	font-style normal
+	position relative
+	display block
+	padding .4em 1em
+	+above(768px)
+		font-size 130%
+	p
+		display inline
+	&:before
+		position absolute
+		top -.35em
+		left -.4em
+		font-size 6em
+		padding 5px
+		clear both
+		content '\201C'
+		font-family sans-serif-reg-italic
+		color red
+	footer
+		font-style normal
+		font-size 70%
+		text-align right
+
+.status
+	width 100%
+	display block
+	position absolute
+	bottom 0
+	left 0
+	&.fixed
+		position fixed
+		top 30%
+		bottom auto
+		z-index 2
+		blockquote
+			background bg-color
+.blank
+	height 300px
+	+above(481px)
+		height 200px
+.share-link
+	li
+		text-align center
+		font-size 1.6em
+		a
+			text-decoration none
+			width 98%
+			padding 6px
+			text-align center
+		&.link
+			font-size 1em
+			textarea
+				font-size .85em
+				font-family sans-serif-reg
+				color grey
+				min-height 0
+				height 50px
+				display block
+.end-gift
+	text-align center
+	font-size 140%
+	margin-top 1em
+	.btn
+		padding .5em 1em
+		max-width 350px
+		
+/*********************
+HEADER STYLES
+*********************/
+.header
+	+above(768px)
+		width 100%
+		clear both
+		height 200px
+		overflow hidden
+		&.fixed
+			z-index 2
+			width 100%
+			background bg-color
+			display block
+			top 0
+			&.inner-header-wrapper
+				height 50px!important
+			.inner-header
+				nav
+					line-height 50px!important
+				.logo
+					display block
+					height 100%
+					img
+						height 100%
+						max-height 68%
+						margin-top 2%
+		.inner-header
+			height 100%
+			clear both
+			width 100%
+			max-width max-width
+			margin 0 auto
+			display block
+			.logo
+				display block
+				height 100%
+				img
+					display block
+					margin 0 auto
+					height 100%
+					max-height 50%
+					margin-top 14%
+					//width 100%
+			nav
+				height 100%
+				font-family sans-serif-reg
+				line-height 200px
+				font-size 96%
+				.menu-send
+					display none
+				&.main-nav-right
+					li
+						float left
+						margin-right .4em
+				&.main-nav-left
+					li
+						float right
+						margin-left .4em
+				li
+					display block
+					a
+						text-decoration none
+						padding 8px
+						color black
+						font-weight 400
+						border-bottom 2px solid bg-color
+						transition border-color .2s ease-in
+						&:hover
+							border-color black
+					&.current-menu-item
+						a
+							border-color black
+	+above(1240px)
+		max-height 100%
+.writer-tag
+	display none
+/*.page-template-page-products-php,*/
+.page.contact
+	.poster
+		max-height 30%
+		.cover
+			min-height 160px
+			.preview-content
+				height auto
+				background none
+				display none
+				+above(481px)
+					height 30%
+	form
+		ul.gfield_radio li input
+			background bg-color
+			color bread
+			padding-left 4px
+			&:active,
+			&:focus
+				box-shadow(none)
+				border-bottom 1px solid light-grey
+				font-weight bold
+.poster
+	height 120%
+	max-height 690px
+	position relative
+	z-index 9999
+	margin-bottom 2em
+	+above(480px)
+		max-height 340px
+	+above(768px)
+		z-index 0
+		height 50%
+		max-height 480px
+	.cover
+		height 100%
+		width 100%
+		min-height 320px
+		position relative
+		overflow hidden
+		background-color #333
+		.gfx
+			.show
+				opacity 1
+			.hide
+				opacity 0
+			div
+				transition opacity .6s ease-in-out
+			#drawing
+			.right
+				position absolute
+				right 0
+				bottom 0
+				height 500px
+				width 310px
+				display none
+				+above(500px)
+					display block
+					height auto
+					width auto
+			.fullwidth 
+				position absolute
+				bottom 0
+				left 0
+				width 100%
+			.arrow
+				height 32px
+				+above(321px)
+					height 64px
+			+above(481px)
+				.arrow
+					display none
+		.cover-image
+			background-repeat no-repeat
+			background-position 50% 95%
+			box-shadow(inset 0px 4px 8px rgba(0,0,0,0.2))
+			background-size cover
+			height 100%
+			width 100%
+			&.desktop
+				display none
+				+above(768px)
+					display block
+			&.mobile
+				+above(768px)
+					display none
+			
+		.preview-content
+			animation fadeIn ease-in 1, slideUp ease-in 1
+			animation-fill-mode forwards, forwards
+			animation-duration .6s, .7s
+			animation-delay .5s, .25s
+			opacity 0
+			top 200px
+			+above(768px)
+				top 20%
+			font-size 100%
+			position absolute
+			width 100%
+			height 42%
+			color white
+			//background linear-gradient(top, rgba(dark-blue,0), rgba(dark-blue,0.6))
+			text-shadow(2px,2px,2px rgba(0,0,0,0.6))
+			&.ie
+				opacity 1
+				bottom 0
+				background-image url(../images/bg_gradient.png)
+				background-repeat repeat-x
+				background-position bottom left
+			.info
+				line-height 1
+				display block
+				margin 0 auto
+				width 100%
+				max-width 76%
+				font-size 94%
+				+above(480px)
+					font-size 110%
+				+above(768px)
+					font-size 130%
+					bottom 50px
+					max-width 600px
+				&.with-image
+					a
+						clear both
+						width 100%
+					.image
+						padding 20px
+						img
+							width 100%
+							height auto
+							display none
+					+above(480px)
+						>div
+							float left
+							width 50%
+						.image img
+							display block
+					+above(768px)
+						max-width 800px
+				h2
+					line-height 105%
+					margin 0 0 0.2em 
+					
+				p
+					font-size 100%
+					font-family sans-serif-reg
+					margin-bottom .6em
+					line-height 1.4
+					&.subheadline
+						font-size 120%
+				i
+					font-size 2em
+					width 100%
+					padding 6px 0
+					text-align center
+					display block
+			a
+				text-decoration none
+				color white
+				display block
+.home .poster
+	max-height 640px
+	+above(768px)
+		height 80%
+		max-height 800px
+/*********************
+NAVIGATION STYLES
+*********************/
+.header .logo
+	column(4)
+	img
+		width 100%
+
+.logo.top-menu
+	position absolute
+	top 50px
+	width 100%
+	display block
+	z-index 1
+	img
+		margin 0 auto
+		display block
+		width 46%
+		height auto
+		max-width 200px
+		padding 40px 15px
+		background-color white
+		box-shadow(4px,4px,0px,rgba(0,0,0,0.25))
+		
+.inner-header-wrapper
+	&.nav-collapse.top-menu
+		z-index 99999
+		position relative
+		.nav-toggle
+			background transparent
+			box-shadow none
+			a
+				color blue
+				font-size 1.4em
+				text-shadow(1px,1px, 0px rgba(255,255,255,.5))
+				text-decoration none
+
+	&.nav-collapse
+		position fixed
+		top 0
+		z-index 99
+		width 100%
+		.inner-header
+			z-index 99
+			position relative
+			background-color light-blue
+			transition max-height .2s ease-in-out
+			.logo
+				display none
+				max-width 100px
+			ul
+				margin 0
+				padding 0
+				width 100%
+				display block
+				list-style none
+				li
+					width 100%
+					display block
+					text-align center
+					a
+						width 100%
+						text-decoration none
+						font-family sans-serif-light
+						text-transform uppercase
+						border-bottom 1px solid light-grey
+						display block
+						padding .5em
+						transition background-color .15s ease-in-out
+						&:hover,
+						&:focus
+							background-color bg-color
+		&.open
+			.inner-header
+				height auto
+				max-height 205px
+				margin 0
+				width 100%
+		&.closed
+			.inner-header
+				max-height 0
+				width 100%
+		.nav-toggle
+			display block
+			position absolute
+			height 62px
+			width 100%
+			background-color bg-color
+			color blue
+			font-family sans-serif-bold
+			z-index 999
+			bottom -62px
+			text-align right
+			padding 5px
+			box-shadow(0 1px 2px rgba(grey,.1))
+			background-image url(../images/logo.svg)
+			background-repeat no-repeat
+			background-position center center
+			background-size 45px
+			.home-link
+				width 16%
+				height 47px
+				display block
+				position absolute
+				top 5px
+				left 42%
+			.icon-menu
+				position absolute
+				right 0
+				top 0
+				width 42px
+				height 100%
+				text-align center
+				display block
+				text-decoration none
+				&:before
+					padding-top 20px
+					margin 0
+
+
+.js .nav-collapse
+	.inner-header
+		clip rect(0 0 0 0)
+		max-height 0
+		position relative
+		display block
+		overflow hidden
+		zoom 1
+
+/*********************
+POSTS & CONTENT STYLES
+*********************/
+
+.site-content
+	padding 0 1em
+	+above(480px)
+		padding 0
+
+div#content
+	margin 0 1.5%
+	font-size 105%
+	+above(481px)
+		max-width max-width
+		margin 0 auto
+	p
+		color bread
+.home
+	section .btn
+		font-size 120%
+.page
+	article
+		max-width (max-width/1.5)
+		margin 0 auto
+		padding-bottom 3em
+	.page-title
+		text-align center
+		border-bottom 2px solid bread
+		width 90%
+		margin 1em auto 1.6em
+
+.content-row
+	&.odd
+		background light-blue
+		
+	.page-teaser
+		padding 0 0 2em
+		+above(481px)
+			max-width max-width
+			margin 0 auto
+		.col
+			text-align center
+			img
+				padding-bottom .7em
+			+above(481px)
+				text-align left
+				.excerpt
+					text-align left
+				&.center
+					text-align center
+						.excerpt
+							text-align center
+		.excerpt
+			font-size 1.3em
+			padding 0 4%
+			margin 0 0 1em
+			text-align center
+.contact-box
+	text-align center
+	padding 1em
+	border-top 2px solid light-grey
+	border-bottom 2px solid light-grey
+	font-size 90%
+	column(8)
+	margin 1.5em auto
+	float none
+	display block
+	min-width 270px
+	h3
+		font-size 140%
+		margin .5em 0
+	&:before,
+	&:after
+		content ''
+		height 1px
+		width 100%
+		background light-grey
+		display block
+	a
+		font-family sans-serif-light-italic
+		text-decoration none
+
+#scrolltop-btn.btn
+	position fixed
+	bottom 12px
+	right 5%
+	display none
+	z-index 9999
+	padding 6px
+	line-height 1
+	&:active
+		top auto
+		left auto
+		bottom 11px
+		right 4.6%
+		box-shadow none
+
+#heart-gallery
+	+above(481px)
+		max-height 400px
+
+.page-template-page-projects-php
+	article
+		max-width max-width
+		text-align center
+		padding-bottom 0
+
+	.sorting
+		text-align center
+		padding 1.5em 0
+		div
+			display inline-block
+			white-space nowrap
+			margin-right .5em
+			a
+				padding 0 6px
+			+above(768px)
+				column(2)
+				overflow visible
+				a
+					width 90%
+
+		.a-featured
+			span
+				background none
+				box-shadow none
+				color bread
+				top -6px
+				right -1px
+				font-size 11px
+				z-index 2
+			&:before,
+			&:after
+				font-family 'icons'
+				content '\e80f'
+				position absolute
+			&:before
+				color lighten(grey,45%)
+				font-size 24px
+				z-index 1
+				top -16px
+				right -7px
+			&:after
+				color bg-color
+				font-size 28px
+				z-index 0
+				top -16px
+				right -9px
+
++above(768px)
+	.page-template-default,
+	.page-template-page-products-php
+		article
+			.page-title
+				display none
+
+.content-row
+	clear both
+	&.send
+		padding 4% 0
+		background darken(light-blue,3%)
+		.specialheadline
+			h3
+				color lighten(bread,10%)
+			span
+				background lighten(bread,40%)
+		.opening-soon
+			font-size 1.5em
+			text-align center
+			font-family sans-serif-reg
+			text-transform uppercase
+			width 100%
+			h3
+				font-size 160%
+				margin 0
+				line-height 1
+			i
+				display block
+				margin 10px auto 0
+				width 2px
+				height 200px
+				background lighten(bread,10%)
+
+.showcase-row .inner-wrap
+.page-template-showcase .page
+	max-width 1040px
+	margin 0 auto
+	display block
+	position relative
+
+.scroll-nav
+	display none
+	/*.scroll-nav__list
+		counter-reset: my-badass-counter
+		list-style-type none
+		margin 0
+		li
+			position relative
+			&:before
+				content: counter(my-badass-counter)
+				counter-increment: my-badass-counter
+				color white
+				background bread
+				padding 4px
+				width 22px
+				font-size 90%
+				display inline-block
+				text-align center
+				position absolute
+				top 0
+				left -36px
+			font-weight bold
+			margin 1.3em 0 1.3em 0
+			border-bottom 2px solid bread
+		a
+			text-decoration none
+	&.fixed
+		position static
+	&.overflow
+		max-height 90px
+		overflow hidden
+		position relative
+		&::after
+			content '\e800'
+			font-family: "icons"
+			font-style: normal
+			font-weight: normal
+			speak: none
+			display: block
+			text-decoration: inherit
+			width: 100%
+			position absolute
+			bottom 0
+			background-image linear-gradient(rgba(bg-color,0), 60% bg-color)
+			//background-color bg-color
+			text-align: right
+			font-variant: normal
+			text-transform: none
+			padding-top 20px
+			height 30px
+			border-bottom 2px solid bread*/
+
+	
+	+above(480px)
+		margin 0 0 1.5em
+		list-style-type none
+		padding 0
+		width 100%
+		text-align left
+		border-top 1px solid light-grey
+		border-bottom 1px solid light-grey
+		display block
+		.prev
+		.next
+			&::before
+				font-family "icons"
+				width 100%
+				text-align center
+				display block
+				position absolute
+				top 50%
+				line-height 0
+				height 1em
+				font-size 1em
+			&.hide
+				display none
+			font-style normal
+			display block
+			width 32px
+			height 100%
+			background bg-color
+			position absolute
+			top 0
+			
+			
+			cursor pointer
+			&:hover
+				background light-grey
+		.prev
+			border-right 1px solid light-grey
+			left 0px
+			&::before
+				content '\e802'
+		.next
+			border-left 1px solid light-grey
+			right 0px
+			&::before
+				content '\e803'
+			&.cancel::before
+				content '\e808'
+		&.fixed
+			min-height 100px
+			background bg-color
+			border none
+			display block
+			position static
+			.prev
+			.next
+				display none
+			.scroll-nav__wrapper
+				top 0
+				position fixed
+				right -30px
+				z-index 30
+				width 20px
+				display table
+				overflow visible
+				height 100%
+				.scroll-nav__list
+					vertical-align middle
+					display table-cell
+					overflow visible
+					right 70px
+					li
+						background grey
+						display block
+						border none
+						margin 33px 0
+						overflow visible
+						min-width 10px
+						min-height 10px
+						transform translateX(0)!important
+						position relative
+						border-radius 50%
+						opacity 0.4
+						transition opacity .1s linear
+						a
+							position absolute
+							top -20px
+							left -288px
+							color black
+							text-align right
+							line-height 1.4
+							display block
+							width 300px
+							padding-right 20px
+							color transparent
+						&.in-view
+							opacity 0.9
+						&.active
+							opacity 1
+						&:hover
+							a
+								color bread
+							background bread
+							opacity 1
+							&:after
+								display none
+						&:before
+						&:after
+							display none
+						&:hover
+						&:focus
+							top 0
+							border none
+		
+		.scroll-nav__wrapper
+			width 100%
+			padding 0 32px
+			+above(1200px)
+				max-width max-width+64px
+			margin 0 auto
+			display block
+			position relative
+			overflow hidden
+			.scroll-nav__list
+				margin 0
+				padding 0
+				overflow hidden
+				even-blocks(32)
+				width 100%
+				position relative
+				right 0
+				transition right .3s ease-in-out
+				min-height 60px
+				+above(768px)
+					min-height 100px
+				display table
+			li
+				vertical-align middle
+				border none
+				font-weight normal
+				border-right 1px solid light-grey
+				position relative
+				min-width 160px
+				display table-cell
+				text-align center
+				overflow hidden
+				transition transform .4s ease-in-out
+				&::before
+					top auto
+					bottom 0
+					right 0
+					left auto
+					background light-grey
+					color grey
+					z-index 0
+					text-align right
+					padding 16px 2px 0 12px
+					font-size 90%
+					display none
+				/*&::after
+					content ''
+					background bg-color
+					display block
+					width 60px
+					height 30px
+					position absolute
+					bottom 15px
+					right -2px
+					transform rotate(-45deg)*/
+				
+				&:first-child
+					border-left 1px solid light-grey
+				a
+					display block
+					text-align center
+					text-decoration none
+					padding 14px
+				&:hover
+					background-color light-grey
+					//background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAP0lEQVQYV2N8+/btf2FhYUYGPACkBqwAn2KYHNwkbIqRxVCsRJZA14jhNpACkHPQ3U2eQqKsJsozRAUPsQEOAGB+R5fBkiV6AAAAAElFTkSuQmCC');
+					&::after
+						content '\e800'
+						font-family: "icons"
+						font-style: normal
+						font-weight: normal
+						speak: none
+						display: block
+						text-decoration: inherit
+						width: 100%
+						position absolute
+						bottom 0
+						background-image linear-gradient(rgba(light-grey,0), 60% light-grey)
+						text-align: center
+						font-variant: normal
+						text-transform: none
+						padding-top 20%
+						height 25%
+						pointer-events none
+//end +above
+
+.showcase-row
+	font-size 90%
+	line-height 1.4
+	padding 60px 10px
+	h2
+		margin-bottom .5em
+		margin-top 0
+	img
+		width 100%
+		height auto
+		box-shadow(1px 2px 3px rgba(0,0,0,0.2))
+	
+	ul,ol
+		list-style-type disc
+		margin 1em 1em
+		li
+			margin-left .6em
+			margin-bottom 1em
+			list-style-type disc
+	
+		
+	.inner-wrap
+		overflow hidden
+		max-width max-width
+		margin 0 auto
+		
+		>.content
+		>.thumbnail
+			display block
+			width 100%
+			padding 0
+			float right
+			+above(720px)
+				width 50%
+				padding 2%
+				/.showcase-row.no-img .inner-wrap >.content
+					width 100%
+					padding 4%
+		.content
+			ul
+				list-style circle
+				padding 0px
+				margin 1em 0
+				li
+					list-style circle
+					padding-left 15px
+			p
+				margin 1em 0 0
+			
+										
+		.thumbnail
+			position relative
+			background inherit
+			overflow hidden
+			/*&::before
+			&::after
+				content ''
+				width 22%
+				height 13%
+				max-width 120px
+				max-height 120px
+				display block
+				position absolute
+				background inherit
+			&::before
+				top 0
+			&::after
+				bottom 0*/	
+
+	&.odd
+		border-bottom 1px solid light-grey
+		border-top 1px solid light-grey
+		background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAP0lEQVQYV2N8+/btf2FhYUYGPACkBqwAn2KYHNwkbIqRxVCsRJZA14jhNpACkHPQ3U2eQqKsJsozRAUPsQEOAGB+R5fBkiV6AAAAAElFTkSuQmCC');
+		.inner-wrap
+			>div
+				//float left
+
+	&.even
+		.inner-wrap
+			>div
+				//float right
+	.thumbnail
+		&::before
+		&::after
+			transform rotate(-45deg)
+		&::before
+			left -5%
+		&::after
+			right -5%
+	/*&.even
+		.thumbnail
+			&::before
+			&::after
+				transform rotate(-45deg)
+			&::before
+				left -5%
+			&::after
+				right -5%
+	&.odd
+		.thumbnail
+			&::before
+			&::after
+				transform rotate(45deg)
+			&::before
+				right -5%
+			&::after
+				left -5%*/
+		
+		
+/*for num in (1)
+	.showcase-row:nth-child({num})
+		background: blue
+		
+for num in (2..30)
+	.showcase-row:nth-child({num})
+		background: darken(blue,num*6)*/
+
+.showcase-row
+	&.end
+		.inner-wrap
+			padding 20px 0
+		text-align center
+	&.blank
+		background white
+		color #222
+		h2
+			color #222		
+	&:first-child
+		padding-top 40px
+
+.gform_wrapper.heartbox-form_wrapper
+	padding-bottom 30px
+	clear both
+	.heartbox-form
+		label.gfield_label
+			display none
+			text-align center
+			color lighten(black,80%)
+			text-transform uppercase
+			width 100%
+		#field_2_4,
+		#field_2_3
+			label
+				display block!important
+				font-family sans-serif-reg
+		input[type="text"],
+		textarea
+			font-size 100%
+			text-align center
+			width 100%
+			display block
+			max-width 100%
+		.headline input
+			font-family sans-serif-reg
+			font-size 2.2em
+			text-transform uppercase
+		.heart-ids,
+		.uid
+			display none
+			label
+				display none
+			input
+				font-size 2em
+
+//404
+.error404
+	article
+		text-align center
+		input
+			display inline-block
+
+//GRID CONTAINER (OUR HEARTS)
+.heart-item
+	cursor pointer
+	position relative
+	z-index 0
+	.error
+		text-align center
+		background lighten(red,90%)
+		color red
+		width 100%
+		max-width 200px
+		padding 2px
+		position absolute
+		top 40%
+
+.grid-container
+	clear both
+	display block
+	padding 1em 0
+	.heart-item
+		column(4)
+		+above(481px)
+			column(3)
+		display block
+		min-height 100px
+		img
+			width 80%
+			height auto
+			margin 10% auto
+			display block
+		&:hover,
+		&:focus
+			img
+				width 84%
+				margin 8% auto
+	.grid-item
+		padding 0 0 20px
+		margin-bottom 20px
+		display block
+		font-size .8em
+		background bg-color
+		width 90%
+		margin-left 5%
+		+above(481px)
+			column(4)
+			min-width 210px
+			margin 0px 1.56% 20px
+			overflow hidden
+		.overlay
+			*background url(../images/opacity.png)
+			background rgba(247,247,247,.65)
+			position absolute
+			width 100%
+			height 100%
+			text-align center
+			padding-top 35%
+			font-family sans-serif
+			text-transform uppercase
+			z-index 99
+		img
+			width 100%
+			height auto
+		h4
+			max-width 78%
+			font-size 160%
+			margin 0
+			font-weight bold
+			font-style italic
+			font
+			a
+				color #333
+				margin-right .2em
+				&:hover
+					text-decoration underline
+			a.decade-tag
+				color grey
+				font-size 90%
+		.tags
+			clear both
+			font-size .85em
+			font-family sans-serif
+			text-transform uppercase
+			color grey
+			&.writer-tags
+				padding-bottom .2em
+				max-width 80%
+			&.genre-tags
+				padding-bottom .8em
+			a
+				color grey
+				&:hover,
+				&:focus
+					text-decoration underline
+		.belowimg
+			position relative
+			margin-top .6em
+			.heart-btn
+				position absolute
+				top 0
+				right 5px
+				color lighten(grey,45%)
+				transition all .2s ease-out
+				font-size 1.5em
+				&:hover,
+				&.active
+					color red
+					transform scale(1.1)
+		.error
+			color red
+			background-color lighten(red,95%)
+			text-align center
+			font-family sans-serif-reg
+			font-size 100%
+			padding 6px
+			margin 0 auto
+
+		.label
+			position absolute
+			font-family sans-serif
+			text-transform uppercase
+			font-size 90%
+			background light-grey
+			border-radius 1em
+			padding .3em 1em
+			display block
+			top 0
+			right 0
+			transition-property color, background-color
+			transition-duration 0.5s, 0.5s
+			transition-timing-function linear, linear
+		&:hover
+			.label
+				background red
+				text-shadow 0 -1px rgba(0,0,0,.5)
+				a
+					color white
+		p
+			clear both
+			padding .7em 0
+			line-height 1.3
+			span
+				font-family sans-serif
+				padding-right 4px
+				text-transform uppercase
+		a
+			text-decoration none
+		a.excerpt-read-more
+			text-decoration underline
+		.timestamp,
+		.release-date,
+		.alt_thumb
+			display none
+
+
+/*********************
+FOOTER STYLES
+*********************/
+
+.footer
+	clear both
+	background-color blue
+	color gray
+	min-height 350px
+	position relative
+	display block
+	#inner-footer
+		width 100%
+		height auto
+		display block
+		.widget
+			text-align center
+			padding 1em
+			max-width (max-width/3)
+			width 100%
+			float none
+			display block
+			min-height 300px
+			background bg-color
+	nav
+		position absolute
+		bottom 0
+		left 0
+		background bg-color
+		width 100%
+		ul
+			max-width max-width
+			margin 0 auto
+			text-align center
+			font-family sans-serif-reg
+			li
+				*float left
+				display inline-block
+				padding 1em
+				a
+					text-decoration none
+	.copyright
+		display none
